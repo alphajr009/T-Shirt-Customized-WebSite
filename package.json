@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index"
+    "start": "nodemon index",
+    "build2": "cd client && npm run dev",
+    "heroku-postbuild": "npm run build2 "
   },
   "keywords": [],
   "author": "",
