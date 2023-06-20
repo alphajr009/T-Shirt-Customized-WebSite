@@ -5,10 +5,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "cd client && npm install",
+    "build2": "cd client && npm install react-scripts",
+    "install-client": "cd client && npm run build",
+    "heroku-postbuild": "npm run build2 && npm run install-client && npm run build",
     "start": "nodemon index",
-    "build": "cd client && npm install vite ",
-    "build2": "cd client && npm run dev",
-    "heroku-postbuild": "npm run build && npm run build2"
+    "client": "cd client && npm run dev"
   },
   "keywords": [],
   "author": "",
