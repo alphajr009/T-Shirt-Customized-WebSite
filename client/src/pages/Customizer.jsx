@@ -53,23 +53,20 @@ const Customizer = () => {
         try {
             setGeneratingImg(true);
 
+            const apiKey = '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';
+
             const response = await fetch('http://localhost:8080/api/v1/dalle', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer $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`,
-                    'OpenAI-Organization': 'org-IYlzz1Kal13Ws8PDRCAU6B4U'
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    prompt
+                    prompt,
                 })
-            });
+            })
 
-
-            console.log('Response:', response);
             const data = await response.json();
-            console.log('Data:', data);
-
 
             handleDecals(type, `data:image/png;base64,${data.photo}`)
         } catch (error) {
@@ -103,7 +100,6 @@ const Customizer = () => {
                 state.isFullTexture = false;
                 break;
         }
-
 
 
         setActiveFilterTab((prevState) => {
@@ -159,7 +155,7 @@ const Customizer = () => {
                     </motion.div>
 
                     <motion.div
-                        className='absolute z-10 bottom-5 right-0 left-0 w-full flex justify-center items-center flex-wrap gap-4'
+                        className='filtertabs-container'
                         {...slideAnimation("up")}
                     >
                         {FilterTabs.map((tab) => (

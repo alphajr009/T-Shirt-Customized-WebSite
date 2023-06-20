@@ -11,9 +11,7 @@ const config = new Configuration({
     organization: 'org-IYlzz1Kal13Ws8PDRCAU6B4U'
 });
 
-
 const openai = new OpenAIApi(config);
-
 
 router.route('/').get((req, res) => {
     res.status(200).json({ message: "Hello from DALL.E ROUTES" })
