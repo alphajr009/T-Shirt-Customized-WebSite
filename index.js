@@ -21,4 +21,8 @@ app.get('/', (req, res) => {
 
 app.use("/api/v1/dalle", dalleRoutes);
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
+
 app.listen(8080, () => console.log('Server has started on port 8080'));
