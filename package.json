@@ -5,10 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd client && npm install",
-    "build2": "cd client && npm install react-scripts",
-    "install-client": "cd client && npm run build",
-    "heroku-postbuild": "npm run build2 && npm run install-client && npm run build",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": " npm run install-client && npm run build",
     "start": "nodemon index",
     "client": "cd client && npm run dev"
   },
