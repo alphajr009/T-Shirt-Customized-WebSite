@@ -8,7 +8,7 @@
     "start": "nodemon index",
     "build": "cd client && npm install vite ",
     "build2": "cd client && npm run dev",
-    "heroku-postbuild": "npm run build2 && npm run build"
+    "heroku-postbuild": "npm run build && npm run build2"
   },
   "keywords": [],
   "author": "",
