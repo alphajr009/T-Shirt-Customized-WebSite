@@ -5,10 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build1": "cd client && npm install",
-    "build2": "cd client && npm install vite",
-    "install-client": "cd client && npm run build",
-    "heroku-postbuild": "npm run build2 && npm run build1 && npm run install-client ",
+    "install-client": "cd client && npm install && npm run build",
+    "heroku-postbuild": "cd client && npm install vite && npm run install-client",
     "start": "nodemon index",
     "client": "cd client && npm run dev"
   },
@@ -22,6 +20,7 @@
     "express": "^4.18.2",
     "mongoose": "^7.3.0",
     "nodemon": "^2.0.22",
-    "openai": "^3.3.0"
+    "openai": "^3.3.0",
+    "vite": "^2.6.4"
   }
 }
