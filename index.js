@@ -13,8 +13,14 @@ const port = process.env.PORT || 8080;
 
 app.use("/api/v1/dalle", dalleRoutes);
 
-app.get('/', (req, res) => {
-    res.status(200).json({ message: "Hello from DALL.E" })
-})
+if (process.env.NODE_ENV === "production") {
+    // Set the static folder
+    app.use(express.static("client/build"));
+
+    // Serve the index.html file for all non-API routes
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    });
+}
 
 app.listen(port, () => console.log('Server has started on port 8080'))
