@@ -6,8 +6,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index",
+    "build": "cd client && npm install vite ",
     "build2": "cd client && npm run dev",
-    "heroku-postbuild": "npm run build2 "
+    "heroku-postbuild": "npm run build2 && npm run build"
   },
   "keywords": [],
   "author": "",
