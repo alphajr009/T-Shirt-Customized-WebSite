@@ -15,7 +15,7 @@ app.use("/api/v1/dalle", dalleRoutes);
 
 if (process.env.NODE_ENV === "production") {
     // Set the static folder
-    app.use(express.static("client/build"));
+    app.use(express.static("client/dist"));
 
     // Serve the index.html file for all non-API routes
     app.get("*", (req, res) => {
