@@ -6,9 +6,10 @@
   "main": "index.js",
   "scripts": {
     "build": "cd client && npm install",
-    "build2": "cd client && npm install vite",
+    "build2": "cd client && npm install react-scripts",
+    "build3": "cd client && npm install vite",
     "install-client": "cd client && npm run build",
-    "heroku-postbuild": "npm run build && npm run build2 && npm run install-client ",
+    "heroku-postbuild": "npm run build2 && npm run build3 && npm run build && npm run install-client ",
     "start": "nodemon index",
     "client": "cd client && npm run dev"
   },
